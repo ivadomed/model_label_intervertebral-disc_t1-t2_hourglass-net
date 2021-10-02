@@ -1,0 +1,13 @@
+path_data: /home/joshua/repos/data-multi-subject
+path_output: sct_run_batch-output-no-overwrite-straighten-label-leftovers/
+script: preprocess-data.sh
+jobs: 2
+batch_log: sct_run_batch_log.txt
+subject_prefix: sub-
+
+# The subjecst below are skipped for the following reasons:
+#   - ucdavis: These subjects have no corresponding ground truth label files
+#   - brnoUhb: These subjects have larger images. Processing with "jobs: 4"
+#              causes my computer to run out of memory, so it's easiest to
+#              process them separately.
+exclude_list:  sub-ucdavis01 sub-ucdavis02 sub-ucdavis03 sub-ucdavis04 sub-ucdavis05 sub-ucdavis06 sub-ucdavis07
